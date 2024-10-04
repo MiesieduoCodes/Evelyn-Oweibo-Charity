@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import Loader from './Components/Loader';
 import Navbar from './Components/Navbar'; // Import your Navbar component
 import Hero from "./Components/Hero";
+import Fundraisers from "./Components/Fundraisers";
 import MiniSection from "./Components/MiniSection";
-
+import Footer from "./Components/Footer";
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -26,8 +27,8 @@ const App = () => {
           <Navbar />
           <Hero />
           <MiniSection />
-          {/* Additional components can go here */}
-          <h1 className="text-2xl text-center mt-4">Welcome to the App!</h1>
+          <Fundraisers />
+          <Footer />
         </>
       )}
     </div>

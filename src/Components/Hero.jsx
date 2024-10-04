@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative flex items-center justify-start h-full p-8">
         <motion.h1
-          className="text-white text-4xl md:text-6xl font-bold"
+          className="text-white text-4xl md:text-6xl font-bolder"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
