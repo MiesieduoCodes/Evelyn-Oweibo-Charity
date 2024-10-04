@@ -1,17 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-transparent text-white p-6 fixed w-full z-10 shadow-md transition-shadow duration-300">
+    <nav className={`p-6 fixed w-full z-10 shadow-md transition-all duration-300 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'}`}>
       <div className="flex justify-between items-center">
         <div className="text-3xl font-bold">Don8</div>
         <div className="md:hidden">
