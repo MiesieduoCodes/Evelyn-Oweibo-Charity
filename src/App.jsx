@@ -1,8 +1,8 @@
-import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
 const App = () => {
   return (
-    <div className="text-3xl font-semibold">
-      <Navbar/>
+    <div className="flex flex-col">
+      <Hero />
     </div>
   )
 }
