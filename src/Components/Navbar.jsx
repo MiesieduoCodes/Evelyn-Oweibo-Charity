@@ -14,10 +14,10 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white p-4">
       <div className="flex justify-between items-center">
-        <div className="text-lg font-bold">My Navbar</div>
+        <div className="text-lg font-bold">Don8</div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">
-            {isOpen ? <RiCloseFill /> : <RiMenu4Fill />}
+            {isOpen ? <RiCloseFill  /> : <RiMenu4Fill class />}
           </button>
         </div>
         <div className={`hidden md:flex space-x-4`}>
