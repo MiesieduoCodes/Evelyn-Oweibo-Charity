@@ -1,4 +1,3 @@
-// src/Navbar.js
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -12,12 +11,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="  text-white p-10">
+    <nav className="bg-transparent text-white p-6 fixed w-full z-10 shadow-md transition-shadow duration-300">
       <div className="flex justify-between items-center">
-        <div className="text-lg font-bolder">Don8</div>
+        <div className="text-3xl font-bold">Don8</div>
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            {isOpen ? <RiCloseFill  /> : <RiMenu4Fill />}
+          <button onClick={toggleMenu} className="focus:outline-none relative">
+            {isOpen ? (
+              <RiCloseFill className="text-4xl transition-transform duration-300 transform" />
+            ) : (
+              <RiMenu4Fill className="text-4xl transition-transform duration-300 transform" />
+            )}
           </button>
         </div>
         <div className={`hidden md:flex space-x-4`}>
@@ -28,20 +31,20 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isOpen && (
-        <motion.div
-          initial={{ height: 0 }}
-          animate={{ height: 'auto' }}
-          exit={{ height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="flex flex-col md:hidden"
-        >
+      <motion.div
+        initial={{ height: 0 }}
+        animate={{ height: isOpen ? 'auto' : 0 }}
+        exit={{ height: 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className={`overflow-hidden flex flex-col md:hidden`}
+      >
+        <div className="flex flex-col space-y-2">
           <Link to="/" className="p-2 hover:bg-gray-700">Home</Link>
           <Link to="/about" className="p-2 hover:bg-gray-700">About</Link>
           <Link to="/services" className="p-2 hover:bg-gray-700">Services</Link>
           <Link to="/contact" className="p-2 hover:bg-gray-700">Contact</Link>
-        </motion.div>
-      )}
+        </div>
+      </motion.div>
     </nav>
   );
 };
