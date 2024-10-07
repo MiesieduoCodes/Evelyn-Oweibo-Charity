@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Navbar from "./Navbar";
-
+import { Link } from 'react-router-dom';
 const HeroSection = () => {
   return (
     <div className="relative w-full h-screen bg-cover bg-center" 
@@ -32,7 +32,9 @@ const HeroSection = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
             >
-              Make Donation Now
+                        <Link to="/services">Make Donation Now</Link>
+
+
             </motion.button>
             <motion.button
               className="bg-blue-500 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"

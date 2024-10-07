@@ -6,6 +6,9 @@ import Hero from "./Components/Hero";
 import Fundraisers from "./Components/Fundraisers";
 import MiniSection from "./Components/MiniSection";
 import Footer from "./Components/Footer";
+import Fundraisers2 from "./Components/Fundraisers2";
+import Donations from "./Components/LatestDonations";
+import News from "./Components/LatestNews";
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -28,6 +31,9 @@ const App = () => {
           <Hero />
           <MiniSection />
           <Fundraisers />
+          <Donations />
+          <Fundraisers2 />
+          <News />
           <Footer />
         </>
       )}
