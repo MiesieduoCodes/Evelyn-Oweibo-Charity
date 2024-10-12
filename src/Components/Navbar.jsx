@@ -39,8 +39,10 @@ const Navbar = () => {
         </div>
         <div className={`hidden md:flex space-x-4`}>
           <Link to="/" className="hover:underline">Home</Link>
+          <Link to="/donate" className='hover:underline'>Donate</Link>
+          <Link to="/gallery" className='hover:underline'>Gallery</Link>
+          <Link to="/blog" className="hover:underline">Blog</Link>
           <Link to="/about" className="hover:underline">About</Link>
-          <Link to="/blog" className="hover:underline">Donate</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       </div>
@@ -50,13 +52,16 @@ const Navbar = () => {
         animate={{ height: isOpen ? 'auto' : 0 }}
         exit={{ height: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`overflow-hidden flex flex-col md:hidden`}
+        className={`overflow-hidden bg-white text-black flex flex-col md:hidden`}
       >
         <div className="flex flex-col space-y-2">
-          <Link to="/" className="p-2 hover:bg-gray-700">Home</Link>
-          <Link to="/about" className="p-2 hover:bg-gray-700">About</Link>
-          <Link to="/services" className="p-2 hover:bg-gray-700">Services</Link>
-          <Link to="/contact" className="p-2 hover:bg-gray-700">Contact</Link>
+        <Link to="/" className="hover:underline p-2 hover:bg-gray-700 ">Home</Link>
+          <Link to="/donate" className='hover:underline p-2 hover:bg-gray-700'>Donate</Link>
+          <Link to="/gallery" className='hover:underline p-2 hover:bg-gray-700'>Gallery</Link>
+          <Link to="/blog" className="hover:underline p-2 hover:bg-gray-700 ">Blog</Link>
+          <Link to="/about" className="hover:underline p-2 hover:bg-gray-700 ">About</Link>
+          <Link to="/contact" className="hover:underline p-2 hover:bg-gray-700 ">Contact</Link>
+
         </div>
       </motion.div>
     </nav>
