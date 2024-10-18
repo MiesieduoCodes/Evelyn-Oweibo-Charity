@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
-
+import { Link } from 'react-router-dom';
 const Blog = () => {
   const posts = [
     { 
@@ -25,10 +25,9 @@ const Blog = () => {
     <div className="flex flex-col">
       <Navbar />
       
-      <div
-        className="flex items-center justify-center h-[100vh] p-8 text-white"
-        style={{ backgroundImage: "url('src/Images/DSC_0390.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}
-      >
+      <div className="flex items-center justify-center h-[100vh] p-8 text-white"
+        style={{ backgroundImage: "url('src/Images/DSC_0390.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="max-w-md">
           <motion.h1
@@ -41,20 +40,41 @@ const Blog = () => {
           </motion.h1>
         </div>
       </div>
-
+      
+      <div className="flex flex-col gap-20">
       <div className="grid gap-6 md:grid-cols-3">
         {posts.map((post, index) => (
           <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
             <div className="p-5">
               <h2 className="text-2xl font-semibold">{post.title}</h2>
-              <p className="text-gray-500">{post.date}</p>
+              <b><p className="text-gray-500">{post.date}</p></b>
               <p className="mt-2 text-gray-700">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-              <a href="#" className="text-blue-500 hover:underline mt-4 inline-block">Read More</a>
+    <Link to="/more" className="text-blue-500 hover:underline mt-4 inline-block">
+      Read More
+    </Link>
+
             </div>
           </div>
         ))}
       </div> 
+      <div className="grid gap-6 md:grid-cols-3">
+        {posts.map((post, index) => (
+          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+            <div className="p-5">
+              <h2 className="text-2xl font-semibold">{post.title}</h2>
+              <b><p className="text-gray-500">{post.date}</p></b>
+              <p className="mt-2 text-gray-700">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+    <Link to="/more" className="text-blue-500 hover:underline mt-4 inline-block">
+      Read More
+    </Link>
+
+            </div>
+          </div>
+        ))}
+      </div> 
+      </div>
 
       <Footer />
     </div>

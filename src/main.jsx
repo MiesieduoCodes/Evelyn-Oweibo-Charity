@@ -7,7 +7,8 @@ import About from "./Components/About";
 // import Donate from "C:/Users/Miesieduo Veria/Downloads/Sites/Orphanage-Disabled Home/EvelynOweibo/public/index.html"
 import Gallery from "./Components/Gallery";
 import Contact from "./Components/Contact";
-import Blog from "./Components/Blog"
+import Blog from "./Components/Blog";
+import BlogSingle from "./Components/BlogSingle";
  // Import your main site component
 // Create the router configuration
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/gallery",
     element: <Gallery />, // Main component
+  },
+  {
+    path: "/more",
+    element: <BlogSingle />, // Main component
   },
   // {
   //   path: "/donate",
