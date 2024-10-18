@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.js
+import { useState, useEffect } from 'react';
+import Loader from './Components/Loader';
+import Navbar from './Components/Navbar'; // Import your Navbar component
+import Hero from "./Components/Hero";
+import Fundraisers from "./Components/Fundraisers";
+import MiniSection from "./Components/MiniSection";
+import Footer from "./Components/Footer";
+import Fundraisers2 from "./Components/Fundraisers2";
+import Donations from "./Components/LatestDonations";
+import News from "./Components/LatestNews";
+const App = () => {
+  const [loading, setLoading] = useState(true);
 
-function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    // Simulate a loading delay (e.g., fetching data)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Change this to your desired loading duration
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="flex flex-col">
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Navbar />
+          <Hero />
+          <MiniSection />
+          <Fundraisers />
+          <Donations />
+          <Fundraisers2 />
+          <News />
+          <Footer />
+        </>
+      )}
+    </div>
+  );
+};
 
-export default App
+export default App;
