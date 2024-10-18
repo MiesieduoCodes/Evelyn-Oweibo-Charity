@@ -4,6 +4,7 @@ import { createBrowserRouter,RouterProvider,} from "react-router-dom";
 import "./index.css";
 import Home from "./App";
 import About from "./Components/About";
+// import Donate from "C:/Users/Miesieduo Veria/Downloads/Sites/Orphanage-Disabled Home/EvelynOweibo/public/index.html"
 import Gallery from "./Components/Gallery";
 import Contact from "./Components/Contact";
 import Blog from "./Components/Blog"
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/gallery",
     element: <Gallery />, // Main component
   },
+  // {
+  //   path: "/donate",
+  //   element: <Donate />, // Main component
+  // },
   {
     path: "/about",
     element: <About />, // Main component
