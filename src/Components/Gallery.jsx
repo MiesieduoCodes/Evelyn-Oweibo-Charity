@@ -56,7 +56,50 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between p-5 md:p-10 overflow-hidden space-y-6 md:space-y-0 md:space-x-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="relative cursor-pointer transition-transform duration-300"
+            onClick={() => handleImageClick(index)}
+          >
+            <img
+              src={image}
+              alt={`Image ${index + 1}`}
+              className="object-cover w-full h-full transition-opacity duration-300"
+            />
+            <div className="absolute inset-0 bg-green-600 opacity-0 flex items-center justify-center text-white transition-opacity duration-300 hover:opacity-75">
+              <span className="text-lg"><ImZoomIn /></span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {selectedImageIndex !== null && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 transition-opacity duration-300">
+          <div className="relative">
+            <img
+              src={images[selectedImageIndex]}
+              alt="Expanded View"
+              className="max-w-full max-h-full object-contain cursor-pointer transition-transform duration-300"
+              onClick={closeOverlay}
+            />
+            <button
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded"
+              onClick={prevImage}
+            >
+              <GrLinkPrevious />
+            </button>
+            <button
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded"
+              onClick={nextImage}
+            >
+              <GrLinkNext />
+            </button>
+          </div>
+        </div>
+      )}
+    <div className="flex flex-col md:flex-row justify-between p-5 md:p-10 overflow-hidden space-y-6 md:space-y-0 md:space-x-6">
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 100 }}
@@ -105,51 +148,6 @@ const Gallery = () => {
           </div>
         </motion.div>
       </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-5">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative cursor-pointer transition-transform duration-300"
-            onClick={() => handleImageClick(index)}
-          >
-            <img
-              src={image}
-              alt={`Image ${index + 1}`}
-              className="object-cover w-full h-full transition-opacity duration-300"
-            />
-            <div className="absolute inset-0 bg-green-600 opacity-0 flex items-center justify-center text-white transition-opacity duration-300 hover:opacity-75">
-              <span className="text-lg"><ImZoomIn /></span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {selectedImageIndex !== null && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 transition-opacity duration-300">
-          <div className="relative">
-            <img
-              src={images[selectedImageIndex]}
-              alt="Expanded View"
-              className="max-w-full max-h-full object-contain cursor-pointer transition-transform duration-300"
-              onClick={closeOverlay}
-            />
-            <button
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded"
-              onClick={prevImage}
-            >
-              <GrLinkPrevious />
-            </button>
-            <button
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded"
-              onClick={nextImage}
-            >
-              <GrLinkNext />
-            </button>
-          </div>
-        </div>
-      )}
-
       <Footer />
     </div>
   );
