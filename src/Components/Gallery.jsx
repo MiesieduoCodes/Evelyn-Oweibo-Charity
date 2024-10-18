@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 
 // Import your images directly
-import img1 from '../Images/DSC_0320.jpg';
+// import img1 from '../Images/DSC_0320.jpg';
 import img2 from '../Images/DSC_0322.jpg';
 import img3 from '../Images/DSC_0324.jpg';
 import img4 from '../Images/DSC_0333.jpg';
@@ -30,7 +30,7 @@ import img21 from '../Images/DSC_0432.jpg';
 import img22 from '../Images/DSC_0446.jpg';
 import img23 from '../Images/DSC_0438-Normal.jpg';
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23];
+const images = [img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23];
 
 const Gallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
