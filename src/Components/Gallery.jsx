@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { ImZoomIn } from "react-icons/im";
 import { motion } from "framer-motion";
-import { useState } from 'react';
-import { GrLinkPrevious } from "react-icons/gr";
-import { GrLinkNext } from "react-icons/gr";
+import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
+
 // Import your images directly
 import img1 from '../Images/DSC_0320.jpg';
 import img2 from '../Images/DSC_0322.jpg';
@@ -29,8 +29,6 @@ import img20 from '../Images/DSC_0426.jpg';
 import img21 from '../Images/DSC_0432.jpg';
 import img22 from '../Images/DSC_0446.jpg';
 import img23 from '../Images/DSC_0438-Normal.jpg';
-
-
 
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23];
 
@@ -60,8 +58,8 @@ const Gallery = () => {
       <Navbar />
       
       <div
-        className=" flex items-center justify-center h-[100vh] p-8 text-white"
-        style={{ backgroundImage: "url('src/Images/DSC_0390.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+        className="flex items-center justify-center h-[100vh] p-8 text-white"
+        style={{ backgroundImage: "url('./Images/DSC_0390.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="max-w-md ">
@@ -119,55 +117,11 @@ const Gallery = () => {
           </div>
         </div>
       )}
-    <div className="flex flex-col md:flex-row justify-between p-5 md:p-10 overflow-hidden space-y-6 md:space-y-0 md:space-x-6">
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.5 }}
-          className="text-center flex-1"
-        >
-          <div>
-            <h1 className="text-xl font-bold">Header Text</h1>
-            <p className="text-gray-700">
-              Lorem ipsum, dolor sit amet consec<br />
-              tetur adipisicing elit. Rem sequi natus<br />
-              similique pariatur molestiae quibusdam tempora.
-            </p>
-          </div>
-        </motion.div>
 
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 0.9 }}
-          className="text-center flex-1"
-        >
-          <div>
-            <h1 className="text-xl font-bold">Header Text</h1>
-            <p className="text-gray-700">
-              Lorem ipsum, dolor sit amet consec<br />
-              tetur adipisicing elit. Rem sequi natus<br />
-              similique pariatur molestiae quibusdam tempora.
-            </p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1.0 }}
-          className="text-center flex-1"
-        >
-          <div>
-            <h1 className="text-xl font-bold">Header Text</h1>
-            <p className="text-gray-700">
-              Lorem ipsum, dolor sit amet consec<br />
-              tetur adipisicing elit. Rem sequi natus<br />
-              similique pariatur molestiae quibusdam tempora.
-            </p>
-          </div>
-        </motion.div>
+      <div className="flex flex-col md:flex-row justify-between p-5 md:p-10 overflow-hidden space-y-6 md:space-y-0 md:space-x-6">
+        {/* Additional Content */}
       </div>
+
       <Footer />
     </div>
   );
