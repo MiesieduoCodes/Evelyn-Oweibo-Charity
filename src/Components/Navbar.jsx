@@ -37,7 +37,7 @@ const Navbar = () => {
           {["Home", "Donate", "Gallery", "Blog", "About", "Contact"].map((link, index) => (
             <Link key={index} to={`/${link.toLowerCase()}`} className="relative group">
               <span className="hover:underline" style={{ textDecoration: 'none' }}>{link}</span>
-              <span className="absolute left-0 bottom-[-8px] w-0 h-1 bg-white transition-all rounded-full duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 bottom-[-8px] w-0 h-1 bg-black transition-all rounded-full duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
         animate={{ height: isOpen ? 'auto' : 0 }}
         exit={{ height: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className={`overflow-hidden bg-white text-black flex flex-col md:hidden`}
+        className={`overflow-hidden z-50 bg-white text-black flex flex-col md:hidden`}
       >
         <div className="flex flex-col space-y-2">
           {["Home", "Donate", "Gallery", "Blog", "About", "Contact"].map((link, index) => (

@@ -7,12 +7,32 @@ import { GrLinkPrevious } from "react-icons/gr";
 import { GrLinkNext } from "react-icons/gr";
 // Import your images directly
 import img1 from '../Images/DSC_0320.jpg';
-import img2 from '../Images/DSC_0387.jpg';
-import img3 from '../Images/DSC_0320.jpg';
-import img4 from '../Images/DSC_0387.jpg';
-import img5 from '../Images/DSC_0320.jpg';
+import img2 from '../Images/DSC_0322.jpg';
+import img3 from '../Images/DSC_0324.jpg';
+import img4 from '../Images/DSC_0333.jpg';
+import img5 from '../Images/DSC_0338.jpg';
+import img6 from '../Images/DSC_0344.jpg';
+import img7 from '../Images/DSC_0348.jpg';
+import img8 from '../Images/DSC_0370.jpg';
+import img9 from '../Images/DSC_0375.jpg';
+import img10 from '../Images/DSC_0378.jpg';
+import img11 from '../Images/DSC_0387.jpg';
+import img12 from '../Images/DSC_0390.jpg';
+import img13 from '../Images/DSC_0392.jpg';
+import img14 from '../Images/DSC_0397.jpg';
+import img15 from '../Images/DSC_0401.jpg';
+import img16 from '../Images/DSC_0404.jpg';
+import img17 from '../Images/DSC_0408.jpg';
+import img18 from '../Images/DSC_0411.jpg';
+import img19 from '../Images/DSC_0419.jpg';
+import img20 from '../Images/DSC_0426.jpg';
+import img21 from '../Images/DSC_0432.jpg';
+import img22 from '../Images/DSC_0446.jpg';
+import img23 from '../Images/DSC_0438-Normal.jpg';
 
-const images = [img1, img2, img3, img4, img5];
+
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23];
 
 const Gallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -40,11 +60,11 @@ const Gallery = () => {
       <Navbar />
       
       <div
-        className="relative flex items-center justify-center h-[100vh] p-8 text-white"
+        className=" flex items-center justify-center h-[100vh] p-8 text-white"
         style={{ backgroundImage: "url('src/Images/DSC_0390.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="max-w-md z-10">
+        <div className="max-w-md ">
           <motion.h1
             className="text-5xl md:text-6xl font-bold mb-4"
             initial={{ y: 100, opacity: 0 }}

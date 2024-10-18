@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter,RouterProvider,} from "react-router-dom";
 import "./index.css";
-import App from "./App";
+import Home from "./App";
 import About from "./Components/About";
 import Gallery from "./Components/Gallery";
 import Contact from "./Components/Contact";
@@ -11,8 +11,8 @@ import Blog from "./Components/Blog"
 // Create the router configuration
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />, // Main component
+    path: "/home",
+    element: <Home />, // Main component
   },
   {
     path: "/blog",

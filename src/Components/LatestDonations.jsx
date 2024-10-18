@@ -1,4 +1,4 @@
-import HeadImage from "../Images/DSC_0438-BW.jpg"
+import HeadImage from "../Images/DSC_0438-Normal.jpg"
 const LatestDonations = () => {
   return (
     <div className="p-10">
