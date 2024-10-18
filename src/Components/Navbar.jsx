@@ -12,11 +12,7 @@ const Navbar = () => {
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+    setScrolled(window.scrollY > 50);
   };
 
   useEffect(() => {
@@ -38,12 +34,12 @@ const Navbar = () => {
           </button>
         </div>
         <div className={`hidden md:flex space-x-4`}>
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/donate" className='hover:underline'>Donate</Link>
-          <Link to="/gallery" className='hover:underline'>Gallery</Link>
-          <Link to="/blog" className="hover:underline">Blog</Link>
-          <Link to="/about" className="hover:underline">About</Link>
-          <Link to="/contact" className="hover:underline">Contact</Link>
+          {["Home", "Donate", "Gallery", "Blog", "About", "Contact"].map((link, index) => (
+            <Link key={index} to={`/${link.toLowerCase()}`} className="relative group">
+              <span className="hover:underline" style={{ textDecoration: 'none' }}>{link}</span>
+              <span className="absolute left-0 bottom-[-8px] w-0 h-1 bg-white transition-all rounded-full duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -55,13 +51,12 @@ const Navbar = () => {
         className={`overflow-hidden bg-white text-black flex flex-col md:hidden`}
       >
         <div className="flex flex-col space-y-2">
-        <Link to="/" className="hover:underline p-2 hover:bg-gray-700 ">Home</Link>
-          <Link to="/donate" className='hover:underline p-2 hover:bg-gray-700'>Donate</Link>
-          <Link to="/gallery" className='hover:underline p-2 hover:bg-gray-700'>Gallery</Link>
-          <Link to="/blog" className="hover:underline p-2 hover:bg-gray-700 ">Blog</Link>
-          <Link to="/about" className="hover:underline p-2 hover:bg-gray-700 ">About</Link>
-          <Link to="/contact" className="hover:underline p-2 hover:bg-gray-700 ">Contact</Link>
-
+          {["Home", "Donate", "Gallery", "Blog", "About", "Contact"].map((link, index) => (
+            <Link key={index} to={`/${link.toLowerCase()}`} className="relative group p-2">
+              <span className="hover:underline" style={{ textDecoration: 'none' }}>{link}</span>
+              <span className="absolute left-0 bottom-[-8px] w-0 h-1 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          ))}
         </div>
       </motion.div>
     </nav>
